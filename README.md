@@ -1,1 +1,1 @@
-# yologaza
+# YOLO가자! 숙박예약 사이트

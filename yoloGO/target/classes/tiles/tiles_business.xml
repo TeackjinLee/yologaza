@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+   <definition name="BusinessLayout"  template="/WEB-INF/views/common/layout.jsp">
+      <put-attribute name="title" value="" />
+      <put-attribute name="header" value="/WEB-INF/views/common/business_header.jsp" />
+      <put-attribute name="body" value="" />
+      <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+   </definition>
+
+   <definition name="business_main" extends="BusinessLayout">
+      <put-attribute name="title" value="비지니스메인페이지" />
+      <put-attribute name="body" value="/WEB-INF/views/main/business_main.jsp" />
+   </definition>
+   
+   <definition name="/businessMember/business_loginForm" extends="BusinessLayout">
+      <put-attribute name="title" value="비지니스 로그인 페이지" />
+      <put-attribute name="body" value="/WEB-INF/views/business/member/business_loginForm.jsp" />
+   </definition>
+   
+   <definition name="/business/goods/businessGoodsMain" extends="BusinessLayout">
+      <put-attribute name="title" value="상세검색페이지" />
+      <put-attribute name="body" value="/WEB-INF/views/business/goods/businessGoodsMain.jsp" />
+   </definition>
+   
+   <definition name="/business/goods/addNewGoodsForm" extends="BusinessLayout">
+       <put-attribute name="title" value="새 상품 추가 페이지" />
+       <put-attribute name="body" value="/WEB-INF/views/business/goods/addNewGoodsForm.jsp" />
+    </definition>
+    
+    <definition name="/business/goods/addNewGoodsRoomForm" extends="BusinessLayout">
+       <put-attribute name="title" value="새 상품 추가 페이지" />
+       <put-attribute name="body" value="/WEB-INF/views/business/goods/addNewGoodsRoomForm.jsp" />
+    </definition>
+    
+    <definition name="/business/goods/viewNewGoods" extends="BusinessLayout">
+       <put-attribute name="title" value="등록한 숙박 검색" />
+       <put-attribute name="body" value="/WEB-INF/views/business/goods/viewNewGoods.jsp" />
+    </definition>
+    
+    <definition name="/business/goods/viewNewGoodsRoom" extends="BusinessLayout">
+       <put-attribute name="title" value="등록한 숙박룸 검색" />
+       <put-attribute name="body" value="/WEB-INF/views/business/goods/viewNewGoodsRoom.jsp" />
+    </definition>
+    
+    <definition name="/business/goods/listGoods" extends="BusinessLayout">
+       <put-attribute name="title" value="등록한 숙박룸 리스트" />
+       <put-attribute name="body" value="/WEB-INF/views/business/goods/listGoods.jsp" />
+    </definition>
+    
+    <definition name="/business/goods/listRoom" extends="BusinessLayout">
+       <put-attribute name="title" value="등록한 룸 리스트" />
+       <put-attribute name="body" value="/WEB-INF/views/business/goods/listRoom.jsp" />
+    </definition>
+    
+        <definition name="/business/goods/reviewManagement" extends="BusinessLayout">
+       <put-attribute name="title" value="리뷰 관리" />
+       <put-attribute name="body" value="/WEB-INF/views/business/goods/reviewManagement.jsp" />
+    </definition>
+    
+    <definition name="/business/goods/reservationCheck" extends="BusinessLayout">
+       <put-attribute name="title" value="예약 조회" />
+       <put-attribute name="body" value="/WEB-INF/views/business/goods/reservationCheck.jsp" />
+    </definition>
+    
+    <definition name="/business/goods/reservationHistory" extends="BusinessLayout">
+       <put-attribute name="title" value="예약 취소 내역" />
+       <put-attribute name="body" value="/WEB-INF/views/business/goods/reservationHistory.jsp" />
+    </definition>	
+    
+    <definition name="/business/goods/calHistory" extends="BusinessLayout">
+       <put-attribute name="title" value="정산 내역" />
+       <put-attribute name="body" value="/WEB-INF/views/business/goods/calHistory.jsp" />
+    </definition>
+	
+    <definition name="/business/goods/salesHistory" extends="BusinessLayout">
+       <put-attribute name="title" value="매출 내역" />
+       <put-attribute name="body" value="/WEB-INF/views/business/goods/salesHistory.jsp" />
+    </definition>
+</tiles-definitions>

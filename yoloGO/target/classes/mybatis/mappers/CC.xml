@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.CC">
+<resultMap id="announceResult" type="announce_VO">
+    <result property="articleNo" column="articleNo" />
+    <result property="title" column="title" />
+    <result property="id" column="id" />
+    <result property="name" column="name" />
+    <result property="content" column="content" />
+    <result property="auth" column="auth" />
+    <result property="writeDate" column="writeDate" />
+  </resultMap> 
+  <resultMap id="frequentResult" type="frequent_VO">
+    <result property="articleNo" column="articleNo" />
+    <result property="title" column="title" />
+    <result property="id" column="id" />
+    <result property="name" column="name" />
+    <result property="content" column="content" />
+    <result property="auth" column="auth" />
+    <result property="type" column="type" />
+    <result property="writeDate" column="writeDate" />
+  </resultMap> 
+  <resultMap id="questionResult" type="question_VO">
+    <result property="articleNo" column="articleNo" />
+    <result property="parentNo" column="parentNo" />
+    <result property="id" column="id" />
+    <result property="content" column="content" />
+    <result property="hp" column="hp" />
+    <result property="email" column="email" />
+    <result property="auth" column="auth" />
+    <result property="type" column="type" />
+    <result property="writeDate" column="writeDate" />
+  </resultMap> 
+
+  <select id="selectAnnounceList" resultMap="announceResult">
+    <![CDATA[
+		
+         select SQL_CALC_FOUND_ROWS * from announce	where auth = #{auth} order by articleNo desc limit #{offset},#{count}
+    ]]>
+  </select>
+  <select id="countAnnounce" resultType="int">
+  	select FOUND_ROWS();
+  </select>
+  <select id="selectAnnounce" resultType="announce_VO"   parameterType="int">
+    <![CDATA[
+      SELECT * from announce
+      where articleNo = #{articleNo}		
+    ]]>
+  </select>
+  
+  <select id="selectFrequentList" resultMap="frequentResult">
+    <![CDATA[
+		
+         select * from frequent_question where auth = #{auth}	order by articleNo asc 
+    ]]>
+  </select>
+  
+  <select id="selectInPersonQuestion" resultMap="questionResult">
+    <![CDATA[
+		
+         select SQL_CALC_FOUND_ROWS * from question_in_person	where id = #{id} order by articleNo desc limit #{offset},#{count}
+    ]]>
+  </select>
+  <select id="countInPersonQuestion" resultType="int">
+  	select FOUND_ROWS();
+  </select>
+  <select id="selectInPersonReply" resultType="question_VO">
+  		select * from question_in_person where parentNo
+         order by articleNo desc
+  </select>
+  
+  <insert id="insertNewQuestion" parameterType="java.util.Map">
+		<![CDATA[
+			insert into question_in_person(articleNo, content, id, type, hp, email, auth)
+			values(#{articleNo}, #{content}, #{id}, #{type}, #{hp}, #{email}, #{auth})
+		]]>
+	</insert>
+	
+  <insert id="insertNewAnnounce" parameterType="java.util.Map">
+		<![CDATA[
+			insert into announce(articleNo, content, title, id, name, auth)
+			values(#{articleNo}, #{content}, #{title}, #{id}, #{name}, #{auth})
+		]]>
+	</insert>
+	
+	<insert id="insertNewFrequent" parameterType="java.util.Map">
+		<![CDATA[
+			insert into frequent_question(articleNo, title, id, name, content, auth, type)
+			values(#{articleNo}, #{title}, #{id}, #{name}, #{content}, #{auth}, #{type})
+		]]>
+	</insert>
+	
+	<select id="selectNewArticleNoQuestion" resultType="int">
+		<![CDATA[
+			SELECT IFNULL(max(articleNo), 0) + 1 from question_in_person	
+		]]>
+	</select>
+	<select id="selectNewArticleNoAnnounce" resultType="int">
+		<![CDATA[
+			SELECT IFNULL(max(articleNo), 0) + 1 from announce	
+		]]>
+	</select>
+	<select id="selectNewArticleNoFrequent" resultType="int">
+		<![CDATA[
+			SELECT IFNULL(max(articleNo), 0) + 1 from frequent_question	
+		]]>
+	</select>
+</mapper>

@@ -18,7 +18,7 @@ Back-end : Java 1.6, JSP, Servlet, Maven 1.2.3, SpringFrameWork
 
 # YOLO가자!
 ![최종 발표 작업이택진1_page-0001](https://user-images.githubusercontent.com/85720454/156948622-ca8c1d3b-3918-4283-8ab4-05fab3316086.jpg)
-![최종 발표 작업이택진1_page-0002](https://user-images.githubusercontent.com/85720454/156948627-a2b84499-ba3e-4d4f-9376-72c75262224a.jpg)
+![최종 발표 작업이택진1_page-0002](https://user-images.githubusercontent.com/85720454/156957721-5c8db2b6-d3a3-4bb3-bf62-f308c5963c93.jpg)
 ![최종 발표 작업이택진1_page-0003](https://user-images.githubusercontent.com/85720454/156948632-2496d3fd-011f-4a3e-9c3b-93ffd948c35f.jpg)
 # 기획 의도
 ![최종 발표 작업이택진1_page-0004](https://user-images.githubusercontent.com/85720454/156948634-3c885c76-b456-42d6-a962-ec7c977eb18e.jpg)
